@@ -8,7 +8,6 @@ import {
 } from "@stream-io/video-react-sdk";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import LoaderUI from "./LoaderUI";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -22,6 +21,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
+import EndCallButton from "./EndCallButton";
 
 function MeetingRoom() {
   const router = useRouter();
@@ -90,7 +90,7 @@ function MeetingRoom() {
                     <UsersIcon className="size-4" />
                   </Button>
 
-                  <Button>END CALL BTN</Button>
+                  <EndCallButton />
                 </div>
               </div>
             </div>
