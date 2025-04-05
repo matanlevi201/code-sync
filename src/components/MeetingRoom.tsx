@@ -23,6 +23,7 @@ import {
 import { Button } from "./ui/button";
 import EndCallButton from "./EndCallButton";
 import CodeEditor from "./CodeEditor";
+import LoaderUI from "./LoaderUI";
 
 function MeetingRoom() {
   const router = useRouter();
@@ -32,13 +33,7 @@ function MeetingRoom() {
 
   const callingState = useCallCallingState();
 
-  if (callingState !== CallingState.JOINED) {
-    return (
-      <div className="h-96 flex items-center justify-center">
-        <LoaderIcon className="size-6 animate-spin" />
-      </div>
-    );
-  }
+  if (callingState !== CallingState.JOINED) <LoaderUI />;
 
   return (
     <div className="h-[calc(100vh-4rem-1px)]">
